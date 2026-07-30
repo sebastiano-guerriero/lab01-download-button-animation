@@ -37,7 +37,7 @@
 
   --color-black: #000000;
 
-  --shadow-intensity: 1;
+  --shadow-intensity: 0.75;
   --shadow-2xs: 0px 1px 0px oklch(from var(--color-black) l c h / calc(0.075 * var(--shadow-intensity)));
   --shadow-xs:  0px 1px 1px -0.5px oklch(from var(--color-black) l c h / calc(0.18 * var(--shadow-intensity))), 
                 0px 2px 2px -1px oklch(from var(--color-black) l c h / calc(0.04 * var(--shadow-intensity))), 
