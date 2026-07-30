@@ -20,8 +20,11 @@
               </figure>
 
               <figure data-icon-wrapper-2 class="absolute inset-0 flex items-center justify-center">
-                <svg data-icon-2 class="size-4.5 text-[#5B5852]" width="18" height="18" viewBox="0 0 18 18">
-                  <circle data-circle-loader cx="9" cy="9" r="7.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-opacity="0.3"/>
+                <svg data-icon-2 data-icon-animating="true" class="size-4.5 text-[#5B5852]" width="18" height="18" viewBox="0 0 18 18">
+                  <circle cx="9" cy="9" r="7.25" stroke-width="0" fill="currentColor"/>
+                  <circle data-circle-mask cx="9" cy="9" r="8" stroke-width="0" fill="white"/>
+                  <circle cx="9" cy="9" r="7.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-opacity="0.3"/>
+                  <circle data-circle-progress cx="9" cy="9" r="7.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                   <polyline data-check points="5.75 9.25 8 11.75 12.25 6.25" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                 </svg>
               </figure>

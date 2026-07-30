@@ -75,3 +75,108 @@
 @utility corner-round {
   corner-shape: round;
 }
+
+/* Circumference ≈ 2π × 7.25 ≈ 45.553 */
+[data-circle-progress] {
+  stroke-dasharray: 45.553;
+  stroke-dashoffset: 45.553;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+[data-icon-animating="true"] [data-circle-progress] {
+  animation: circle-progress 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+[data-circle-mask] {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+[data-icon-animating="true"] [data-circle-mask] {
+  animation: circle-mask-scale 0.35s cubic-bezier(0.4, 0, 0.2, 1) 3.2s forwards;
+}
+
+[data-icon-2] {
+  transform-origin: center;
+}
+
+[data-icon-2][data-icon-animating="true"] {
+  animation: icon-complete-pulse 0.35s cubic-bezier(0.4, 0, 0.2, 1) 3.2s forwards;
+}
+
+[data-check] {
+  transform-origin: center;
+  scale: 0.5;
+  filter: blur(1px);
+}
+
+[data-icon-animating="true"] [data-check] {
+  animation: check-reveal 0.35s cubic-bezier(0.4, 0, 0.2, 1) 3.2s forwards;
+}
+
+/* Uneven pacing mimics a real download: burst → stall → crawl → finish */
+@keyframes circle-progress {
+  0% {
+    stroke-dashoffset: 45.553;
+  }
+  12% {
+    stroke-dashoffset: 34.165; /* ~25% */
+  }
+  22% {
+    stroke-dashoffset: 34.165; /* pause */
+  }
+  38% {
+    stroke-dashoffset: 25.054; /* ~45% */
+  }
+  48% {
+    stroke-dashoffset: 22.777; /* ~50%, slow crawl */
+  }
+  55% {
+    stroke-dashoffset: 22.777; /* pause */
+  }
+  72% {
+    stroke-dashoffset: 9.111; /* ~80% */
+  }
+  82% {
+    stroke-dashoffset: 8.199; /* stall near the end */
+  }
+  90% {
+    stroke-dashoffset: 8.199; /* pause */
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circle-mask-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes check-reveal {
+  from {
+    scale: 0.5;
+    filter: blur(1px);
+  }
+  to {
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes icon-complete-pulse {
+  0% {
+    scale: 1;
+  }
+  45% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1;
+  }
+}
