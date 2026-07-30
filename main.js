@@ -2,6 +2,7 @@ import "./tailwind.css";
 
 const ICON_ENTER_MS = 300;
 const ICON_ANIMATION_MS = 3750; // 3.2s progress + 0.55s complete pulse
+const ICON_HOLD_MS = 300;
 const ICON_EXIT_MS = 300;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.setTimeout(() => {
           delete icon.dataset.iconAnimating;
         }, ICON_EXIT_MS);
-      }, ICON_ANIMATION_MS);
+      }, ICON_ANIMATION_MS + ICON_HOLD_MS);
     }, ICON_ENTER_MS);
   });
 
