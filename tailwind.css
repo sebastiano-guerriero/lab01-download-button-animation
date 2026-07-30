@@ -76,6 +76,12 @@
   corner-shape: round;
 }
 
+/* Avoid transition flash on first paint (icons snap to resting position) */
+html:not([data-ready]) [data-icon-wrapper-1],
+html:not([data-ready]) [data-icon-wrapper-2] {
+  transition: none !important;
+}
+
 /* Circumference ≈ 2π × 7.25 ≈ 45.553 */
 [data-circle-progress] {
   stroke-dasharray: 45.553;
